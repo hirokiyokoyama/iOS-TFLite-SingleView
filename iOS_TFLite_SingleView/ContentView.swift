@@ -9,8 +9,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject private var viewModel = ContentViewModel()
+
     var body: some View {
-        Text("Hello, World!")
+        ZStack {
+            PreviewView(session: viewModel.cameraManager?.session)
+                .onAppear {self.viewModel.cameraManager?.startSession()}
+                .onDisappear {self.viewModel.cameraManager?.stopSession()}
+            Text(viewModel.resultText)
+                .foregroundColor(.red)
+                .bold()
+        }
     }
 }
 
