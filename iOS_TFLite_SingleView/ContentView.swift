@@ -10,7 +10,6 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject private var viewModel = ContentViewModel()
-    @State private var dragLocation = CGPoint()
 
     var body: some View {
         ZStack {
