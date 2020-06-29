@@ -11,12 +11,20 @@ import AVFoundation
 class ContentViewModel : NSObject, ObservableObject {
     var cameraManager: CameraManager? = nil
     var modelManager: ModelManager? = nil
-    @Published var resultText: String = "NoData"
+    var dimensions: CGSize? = nil
+    @Published var resultText: String = "Initializing"
+    @Published var tapText: String = "Initializing"
 
     override init() {
         super.init()
         modelManager = ModelManager()
         cameraManager = CameraManager(sampleBufferDelegate: self)
+    }
+    
+    func tap(_ p: CGPoint) {
+        if let dim = dimensions {
+            tapText = "tap: (\(p.x * dim.width), \(p.y * dim.height))"
+        }
     }
 }
 
@@ -31,9 +39,12 @@ extension ContentViewModel: AVCaptureVideoDataOutputSampleBufferDelegate {
             print("Failed to get pixel data.")
             return
         }
-        
+        let width = CVPixelBufferGetWidth(imagePixelBuffer)
+        let height = CVPixelBufferGetHeight(imagePixelBuffer)
+        dimensions = CGSize(width: CGFloat(width), height: CGFloat(height))
+
+        let result = self.modelManager?.runModel(onFrame: imagePixelBuffer)
         DispatchQueue.main.async {
-            let result = self.modelManager?.runModel(onFrame: imagePixelBuffer)
             if let result = result {
                 let pred = result.prediction
                 let time = result.time

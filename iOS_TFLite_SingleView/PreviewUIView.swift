@@ -26,7 +26,7 @@ class PreviewUIView: UIView {
             imageView.image = newValue
         }
     }
-
+    
     var previewLayer: AVCaptureVideoPreviewLayer {
         guard let layer = layer as? AVCaptureVideoPreviewLayer else {
             fatalError("Layer expected is of type VideoPreviewLayer")

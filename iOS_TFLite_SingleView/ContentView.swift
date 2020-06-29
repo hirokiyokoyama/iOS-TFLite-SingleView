@@ -10,15 +10,37 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject private var viewModel = ContentViewModel()
+    @State private var dragLocation = CGPoint()
 
     var body: some View {
         ZStack {
-            PreviewView(session: viewModel.cameraManager?.session)
-                .onAppear {self.viewModel.cameraManager?.startSession()}
-                .onDisappear {self.viewModel.cameraManager?.stopSession()}
-            Text(viewModel.resultText)
-                .foregroundColor(.red)
-                .bold()
+            GeometryReader { geometry in
+                PreviewView(session: self.viewModel.cameraManager?.session)
+                .onAppear {
+                    self.viewModel.cameraManager?.startSession()
+                }
+                .onDisappear {
+                    self.viewModel.cameraManager?.stopSession()
+                }
+                .gesture(
+                    DragGesture(minimumDistance: 0.0)
+                    .onChanged { value in
+                        let p = CGPoint(
+                            x: value.location.x/geometry.size.width,
+                            y: value.location.y/geometry.size.height)
+                        self.viewModel.tap(p)
+                    }
+                )
+            }
+                
+            VStack {
+                Text(viewModel.resultText)
+                    .foregroundColor(.red)
+                    .bold()
+                Text(viewModel.tapText)
+                    .foregroundColor(.blue)
+                    .bold()
+            }
         }
     }
 }

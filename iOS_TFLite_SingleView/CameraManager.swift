@@ -10,7 +10,6 @@ import UIKit
 import AVFoundation
 
 enum CameraConfiguration {
-    
     case success
     case failed
     case permissionDenied
@@ -25,6 +24,7 @@ class CameraManager: NSObject {
     private lazy var videoDataOutput = AVCaptureVideoDataOutput()
     private var isSessionRunning = false
 
+
     // MARK: CameraFeedManagerDelegate
     var sampleBufferDelegate: AVCaptureVideoDataOutputSampleBufferDelegate? = nil
     //weak var delegate: CameraFeedManagerDelegate?
@@ -34,8 +34,8 @@ class CameraManager: NSObject {
         self.sampleBufferDelegate = sampleBufferDelegate
 
         // Initializes the session
-        session.sessionPreset = .low
-        self.attemptToConfigureSession()
+        session.sessionPreset = .high
+        attemptToConfigureSession()
     }
 
   // MARK: Session Start and End methods
@@ -153,7 +153,7 @@ class CameraManager: NSObject {
 
     /**Tries to get the default back camera.
      */
-    guard let camera  = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back) else {
+    guard let camera = AVCaptureDevice.default(.builtInWideAngleCamera, for: .video, position: .back) else {
       return false
     }
 
