@@ -10,34 +10,48 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject private var viewModel = ContentViewModel()
+    @State private var coordinateConverter: PreviewLayerCoordinateConverter?
 
+    private var bb: CGRect? {
+        if let conv = coordinateConverter {
+            return viewModel.boundingBox.map(conv.layerRect(fromDeviceRect:))
+        } else {
+            return nil
+        }
+    }
+    
     var body: some View {
         ZStack {
-            GeometryReader { geometry in
-                PreviewView(session: self.viewModel.cameraManager?.session)
-                .onAppear {
-                    self.viewModel.cameraManager?.startSession()
-                }
-                .onDisappear {
-                    self.viewModel.cameraManager?.stopSession()
-                }
-                .gesture(
-                    DragGesture(minimumDistance: 0.0)
-                    .onChanged { value in
-                        let p = CGPoint(
-                            x: value.location.x/geometry.size.width,
-                            y: value.location.y/geometry.size.height)
-                        self.viewModel.tap(p)
-                    }
-                )
+            PreviewView(session: self.viewModel.cameraManager?.session,
+                        coordinateConverter: self.$coordinateConverter)
+            .onAppear {
+                self.viewModel.cameraManager?.startSession()
             }
-                
+            .onDisappear {
+                self.viewModel.cameraManager?.stopSession()
+            }
+            .gesture(
+                DragGesture(minimumDistance: 0.0)
+                .onChanged { value in
+                    if let p = self.coordinateConverter?.devicePoint(fromLayerPoint: value.location) {
+                        self.viewModel.tap(p)
+                    } else {
+                        print("No converter")
+                    }
+                }
+            )
+            
+            Path { path in
+                if let bb = bb {
+                    path.addRect(bb)
+                }
+            }
+            .stroke(Color.blue, lineWidth: 2)
+
             VStack {
+                Spacer()
                 Text(viewModel.resultText)
                     .foregroundColor(.red)
-                    .bold()
-                Text(viewModel.tapText)
-                    .foregroundColor(.blue)
                     .bold()
             }
         }

@@ -184,7 +184,7 @@ class CameraManager: NSObject {
 
     if session.canAddOutput(videoDataOutput) {
       session.addOutput(videoDataOutput)
-      videoDataOutput.connection(with: .video)?.videoOrientation = .portrait
+      //videoDataOutput.connection(with: .video)?.videoOrientation = .portrait
       return true
     }
     return false

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		748D1B4C24B1EDAF002E2779 /* FrameGrabber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748D1B4B24B1EDAF002E2779 /* FrameGrabber.swift */; };
+		748D1B4E24B1EDF9002E2779 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748D1B4D24B1EDF9002E2779 /* CameraManager.swift */; };
+		748D1B5024B1EE55002E2779 /* ModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748D1B4F24B1EE55002E2779 /* ModelManager.swift */; };
+		748D1B5224B1F235002E2779 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748D1B5124B1F235002E2779 /* PreviewView.swift */; };
+		748D1B5424B2A023002E2779 /* MatrixView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748D1B5324B2A023002E2779 /* MatrixView.swift */; };
 		74D20D4524A5E71000A8B36F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D20D4424A5E71000A8B36F /* AppDelegate.swift */; };
 		74D20D4724A5E71000A8B36F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D20D4624A5E71000A8B36F /* SceneDelegate.swift */; };
 		74D20D4924A5E71000A8B36F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D20D4824A5E71000A8B36F /* ContentView.swift */; };
@@ -15,12 +20,8 @@
 		74D20D5124A5E71300A8B36F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74D20D4F24A5E71300A8B36F /* LaunchScreen.storyboard */; };
 		74D20D5C24A5E71300A8B36F /* iOS_TFLite_SingleViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D20D5B24A5E71300A8B36F /* iOS_TFLite_SingleViewTests.swift */; };
 		74D20D6724A5E71300A8B36F /* iOS_TFLite_SingleViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D20D6624A5E71300A8B36F /* iOS_TFLite_SingleViewUITests.swift */; };
-		74D20D7524A5E81C00A8B36F /* CVPixelBufferExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D20D7424A5E81C00A8B36F /* CVPixelBufferExtension.swift */; };
-		74D20D7724A5E84800A8B36F /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D20D7624A5E84800A8B36F /* CameraManager.swift */; };
 		74D20D7924A5E85B00A8B36F /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D20D7824A5E85B00A8B36F /* ContentViewModel.swift */; };
 		74D20D7B24A5E8EB00A8B36F /* PreviewUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D20D7A24A5E8EB00A8B36F /* PreviewUIView.swift */; };
-		74D20D7D24A5E8F100A8B36F /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D20D7C24A5E8F100A8B36F /* PreviewView.swift */; };
-		74D20D7F24A5E8F800A8B36F /* ModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D20D7E24A5E8F800A8B36F /* ModelManager.swift */; };
 		74D20D8124A5F6C400A8B36F /* model.tflite in Resources */ = {isa = PBXBuildFile; fileRef = 74D20D8024A5F6C400A8B36F /* model.tflite */; };
 		8762524907C54D794A2C9CC6 /* Pods_iOS_TFLite_SingleView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62496B7163F48106B8BCC3E7 /* Pods_iOS_TFLite_SingleView.framework */; };
 /* End PBXBuildFile section */
@@ -45,6 +46,11 @@
 /* Begin PBXFileReference section */
 		58260F3E4DF24D048A727E09 /* Pods-iOS_TFLite_SingleView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_TFLite_SingleView.release.xcconfig"; path = "Target Support Files/Pods-iOS_TFLite_SingleView/Pods-iOS_TFLite_SingleView.release.xcconfig"; sourceTree = "<group>"; };
 		62496B7163F48106B8BCC3E7 /* Pods_iOS_TFLite_SingleView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_TFLite_SingleView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		748D1B4B24B1EDAF002E2779 /* FrameGrabber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FrameGrabber.swift; sourceTree = "<group>"; };
+		748D1B4D24B1EDF9002E2779 /* CameraManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
+		748D1B4F24B1EE55002E2779 /* ModelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelManager.swift; sourceTree = "<group>"; };
+		748D1B5124B1F235002E2779 /* PreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
+		748D1B5324B2A023002E2779 /* MatrixView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MatrixView.swift; sourceTree = "<group>"; };
 		74D20D4124A5E71000A8B36F /* iOS_TFLite_SingleView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOS_TFLite_SingleView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74D20D4424A5E71000A8B36F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74D20D4624A5E71000A8B36F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,12 +65,8 @@
 		74D20D6224A5E71300A8B36F /* iOS_TFLite_SingleViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOS_TFLite_SingleViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		74D20D6624A5E71300A8B36F /* iOS_TFLite_SingleViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_TFLite_SingleViewUITests.swift; sourceTree = "<group>"; };
 		74D20D6824A5E71300A8B36F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		74D20D7424A5E81C00A8B36F /* CVPixelBufferExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVPixelBufferExtension.swift; sourceTree = "<group>"; };
-		74D20D7624A5E84800A8B36F /* CameraManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
 		74D20D7824A5E85B00A8B36F /* ContentViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		74D20D7A24A5E8EB00A8B36F /* PreviewUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewUIView.swift; sourceTree = "<group>"; };
-		74D20D7C24A5E8F100A8B36F /* PreviewView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
-		74D20D7E24A5E8F800A8B36F /* ModelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelManager.swift; sourceTree = "<group>"; };
 		74D20D8024A5F6C400A8B36F /* model.tflite */ = {isa = PBXFileReference; lastKnownFileType = file; path = model.tflite; sourceTree = "<group>"; };
 		77F2E80BBBF5C5A910184395 /* Pods-iOS_TFLite_SingleView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS_TFLite_SingleView.debug.xcconfig"; path = "Target Support Files/Pods-iOS_TFLite_SingleView/Pods-iOS_TFLite_SingleView.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,15 +123,16 @@
 		74D20D4324A5E71000A8B36F /* iOS_TFLite_SingleView */ = {
 			isa = PBXGroup;
 			children = (
-				74D20D7424A5E81C00A8B36F /* CVPixelBufferExtension.swift */,
 				74D20D4424A5E71000A8B36F /* AppDelegate.swift */,
+				748D1B4D24B1EDF9002E2779 /* CameraManager.swift */,
+				748D1B4B24B1EDAF002E2779 /* FrameGrabber.swift */,
 				74D20D7824A5E85B00A8B36F /* ContentViewModel.swift */,
 				74D20D4624A5E71000A8B36F /* SceneDelegate.swift */,
-				74D20D7624A5E84800A8B36F /* CameraManager.swift */,
+				748D1B5324B2A023002E2779 /* MatrixView.swift */,
 				74D20D4824A5E71000A8B36F /* ContentView.swift */,
+				748D1B5124B1F235002E2779 /* PreviewView.swift */,
 				74D20D7A24A5E8EB00A8B36F /* PreviewUIView.swift */,
-				74D20D7C24A5E8F100A8B36F /* PreviewView.swift */,
-				74D20D7E24A5E8F800A8B36F /* ModelManager.swift */,
+				748D1B4F24B1EE55002E2779 /* ModelManager.swift */,
 				74D20D4A24A5E71300A8B36F /* Assets.xcassets */,
 				74D20D4F24A5E71300A8B36F /* LaunchScreen.storyboard */,
 				74D20D5224A5E71300A8B36F /* Info.plist */,
@@ -340,14 +343,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				74D20D7B24A5E8EB00A8B36F /* PreviewUIView.swift in Sources */,
-				74D20D7D24A5E8F100A8B36F /* PreviewView.swift in Sources */,
 				74D20D4524A5E71000A8B36F /* AppDelegate.swift in Sources */,
-				74D20D7524A5E81C00A8B36F /* CVPixelBufferExtension.swift in Sources */,
+				748D1B5424B2A023002E2779 /* MatrixView.swift in Sources */,
+				748D1B5224B1F235002E2779 /* PreviewView.swift in Sources */,
+				748D1B4E24B1EDF9002E2779 /* CameraManager.swift in Sources */,
 				74D20D7924A5E85B00A8B36F /* ContentViewModel.swift in Sources */,
-				74D20D7F24A5E8F800A8B36F /* ModelManager.swift in Sources */,
 				74D20D4724A5E71000A8B36F /* SceneDelegate.swift in Sources */,
+				748D1B5024B1EE55002E2779 /* ModelManager.swift in Sources */,
 				74D20D4924A5E71000A8B36F /* ContentView.swift in Sources */,
-				74D20D7724A5E84800A8B36F /* CameraManager.swift in Sources */,
+				748D1B4C24B1EDAF002E2779 /* FrameGrabber.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
